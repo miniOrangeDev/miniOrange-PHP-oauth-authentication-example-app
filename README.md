@@ -22,7 +22,7 @@ Also make sure to replace the placeholders (<Your_Client_ID>, etc). with the act
     GRANT_TYPE=<YOUR_GRANT_TYPE> # Default is authorization_code, supported grant types =>   implicit, authorization_code_pkce, authorization_code
 In this step, you need to ensure that the credentials and configuration details in the .env file are accurate, especially the PEM certificate path and other key parameters.
 
-# Install Dependencied:
+# Install Dependencies:
 navigate to phpOauth Directory where the composer.json file is located and run the following command to install all required dependencies:
 
 ### `composer install`
