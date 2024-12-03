@@ -36,7 +36,7 @@ If using XAMPP or WAMP locally : Launch the server software (eg,XAMPP OR WAMP) a
 # Open Starter App in Browser 
 Open a web browser and enter the URL to access your application: 
 
-For your local environment go to http://localhost/{your-folder-name}/to access the starter application
+For your local environment go to http://localhost/{your-folder-name}/ to access the starter application
 
 # Start and Test Authorization
 
