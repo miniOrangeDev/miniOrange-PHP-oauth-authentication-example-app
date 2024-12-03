@@ -2,7 +2,7 @@
 This guide outlines the steps to quickly integrate OAUTH authentication into your PHP app using miniOrange as the identity provider
 
 ## Configure MiniOrange 
-### 1.Create an OAuth application in the miniOrange Dashboard 
+### Create an OAuth application in the miniOrange Dashboard 
 visit this link to create [OAuth application](https://www.miniorange.com/iam/content-library/admin-docs/how-to-add-oauth-app)
 
 # Installation 
