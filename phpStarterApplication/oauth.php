@@ -37,7 +37,7 @@ class MyLoginSuccessListener implements LoginListener
 
         $_SESSION["firstname"] = $user->firstname;
         $_SESSION["lastname"] = $user->lastname;
-        header("Location: /phpTestFatoryPattern/dashboard.php");
+        header("Location: /phpStarterApplication/dashboard.php");
     }
     public function onError($errorMessage)
     {
