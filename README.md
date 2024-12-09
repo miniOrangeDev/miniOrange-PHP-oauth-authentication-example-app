@@ -40,7 +40,7 @@ If not, refer to the [installation guide](https://www.javatpoint.com/how-to-inst
 
 ---
 
-## 6.  Open the Starter App in the Browser**
+## 6.  Open the Starter App in the Browser
 
 * Open a web browser and enter the URL to access your application:
 * For your  local environment go to http://localhost/your-folder-name/ to access the starter application.
@@ -48,7 +48,7 @@ If not, refer to the [installation guide](https://www.javatpoint.com/how-to-inst
 
 ---
 
-## 7. Start and Test Authorization**
+## 7. Start and Test Authorization
 
 &nbsp;1. initiate the authorization process by clicking the "Start Authorization" button in the starter app. 
 
