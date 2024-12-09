@@ -38,12 +38,15 @@ If not, refer to the [installation guide](https://www.javatpoint.com/how-to-inst
 * Launch the server software (e.g., XAMPP or WAMP).
 * Ensure Apache or an equivalent web server is running.
 
+---
+
 ## 6.  Open the Starter App in the Browser**
 
 * Open a web browser and enter the URL to access your application:
 * For your  local environment go to http://localhost/your-folder-name/ to access the starter application.
 [Also make sure to update dashboard Url in your-folder-name/oauth.php at line 40 with your-folder-name/dashboard.php]
 
+---
 
 ## 7. Start and Test Authorization**
 
