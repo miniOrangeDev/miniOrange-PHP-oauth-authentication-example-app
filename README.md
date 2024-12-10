@@ -72,6 +72,8 @@ If not, refer to the [installation guide](https://www.javatpoint.com/how-to-inst
 
 &nbsp;3. After a successful login, you should be redirected back to your application, where you can verify the OAuth flow and ensure your user is authenticated.
 
+---
 
+![](https://github.com/dev-shubham-mali/miniOrange-PHP-oauth-authentication-example-app/blob/main/phpConnectorDemo.gif)
 
 
