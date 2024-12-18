@@ -28,8 +28,8 @@ class UrlEndpointUtils
         return $baseUrl . "/rest/oauth/getuserinfo";
     }
 
-    public static function createLogoutUrl(string $baseUrl, string $redirectUri): string
+    public static function createLogoutUrl(string $baseUrl, string $logoutRedirectUri): string
     {
-        return $baseUrl . "/idp/oidc/logout?post_logout_redirect_uri=" . urlencode($redirectUri);
+        return $baseUrl . "/idp/oidc/logout?post_logout_redirect_uri=" . urlencode($logoutRedirectUri);
     }
 }

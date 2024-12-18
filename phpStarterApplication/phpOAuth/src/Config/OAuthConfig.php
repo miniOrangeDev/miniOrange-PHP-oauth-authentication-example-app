@@ -11,7 +11,8 @@ class OAuthConfig
     private string $clientSecret;
     private string $baseUrl;
     private string $redirectUri;
-    private ?string $pemCertificatePath = null;
+    private string $logoutRedirectUri;
+    // private ?string $pemCertificatePath = null;
     private ?string $scope = null; 
     private ?string $grantType= null; 
    
@@ -25,12 +26,13 @@ class OAuthConfig
         $this->clientSecret = $_ENV['CLIENT_SECRET'] ?? null;
         $this->baseUrl = $_ENV['BASE_URL'] ?? null;
         $this->redirectUri = $_ENV['REDIRECT_URI'] ?? null;
-        $this->pemCertificatePath = $_ENV['PEM_CERTIFICATE_PATH'];
-        $this->scope = $_ENV['SCOPE'] ?? null; // Optional: Set to null if not provided
-        $this->grantType = $_ENV['GRANT_TYPE'] ?? 'authorization_code'; // Optional: Set to authorization_code if not provided
+        $this->logoutRedirectUri = $_ENV['LOGOUT_REDIRECT_URI'] ?? null;
+        // $this->pemCertificatePath = $_ENV['PEM_CERTIFICATE_PATH'];
+        $this->scope = $_ENV['SCOPE'] ?? 'email profile'; //default email profile
+        $this->grantType = $_ENV['GRANT_TYPE'] ?? 'authorization_code'; //default authorization_code provided
 
         // Optionally, add checks to ensure required environment variables are set
-        if (!$this->clientId || !$this->clientSecret || !$this->baseUrl || !$this->redirectUri || !$this->pemCertificatePath || !$this->scope) {
+        if (!$this->clientId || !$this->clientSecret || !$this->baseUrl || !$this->redirectUri || !$this->logoutRedirectUri || /* !$this->pemCertificatePath ||*/ !$this->scope) {
             throw new Exception('Missing required environment variables for OAuthConfig');
         }
     }
@@ -61,10 +63,16 @@ class OAuthConfig
     }
 
 
-    public function getPemCertificatePath(): string
+    public function getLogoutRedirectUri(): string
     {
-        return $this->pemCertificatePath;
+        return $this->logoutRedirectUri;
     }
+
+
+    // public function getPemCertificatePath(): string
+    // {
+    //     return $this->pemCertificatePath;
+    // }
 
 
     public function getGrantType(): ?string
