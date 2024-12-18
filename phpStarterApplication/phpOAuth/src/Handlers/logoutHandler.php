@@ -9,10 +9,10 @@ use Miniorange\Phpoauth\Utils\UrlEndpointUtils;
 function logout($config)
 {
     $baseUrl = $config->getBaseUrl();
-    $redirectUri = $config->getRedirectUri(); 
+    $logoutRedirectUri = $config->getLogoutRedirectUri(); 
 
     // Generate the logout URL
-    $logoutUrl = UrlEndpointUtils::createLogoutUrl($baseUrl, $redirectUri);
+    $logoutUrl = UrlEndpointUtils::createLogoutUrl($baseUrl, $logoutRedirectUri);
 
     // Redirect to the logout URL
     header("Location: $logoutUrl");
