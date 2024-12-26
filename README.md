@@ -1,48 +1,79 @@
-# miniOrange-PHP-oauth-authentication-example-app
-This guide outlines the steps to quickly integrate OAUTH authentication into your PHP app using miniOrange as the identity provider
+# Setting Up OAuth Application on MiniOrange
 
-## Configure MiniOrange 
-### Create an OAuth application in the miniOrange Dashboard 
-visit this link to create [OAuth application](https://www.miniorange.com/iam/content-library/admin-docs/how-to-add-oauth-app)
 
-# Installation 
-You can fork this repository or download these files and save it in your **htdocs** folder (for XAMPP)  or the root web directory of your server (for WAMP or another local server).
+**Prerequisites:**
 
-# Modify the .env File 
-In this step, you need to provide your client credentials that we've copied earlier from previous steps and configuration details by modifying the .env file. These credentials are required for the OAuth process to authenticate and authorize users.
+**🐘 1. PHP 8.1 or above:** 
+The php connector uses modern PHP features, including Enums, which are supported starting from PHP 8.1. Ensure your server runs PHP 8.1 or higher.
 
-Also make sure to replace the placeholders (<Your_Client_ID>, etc). with the actual values provided by MiniOrange.
+**🌐 2. Local Server Environment:** 
+A local server environment is required to host and run the application. You can use one of the following:
+- XAMPP (recommended for Windows users): [Download XAMPP](https://www.apachefriends.org/download.html)
+- WAMP: [Download WAMP](https://wampserver.aviatechno.net/)
+Alternatively, any other web server setup compatible with PHP 8.1+.
 
-    CLIENT_ID=<YOUR_CLIENT_ID>
-    CLIENT_SECRET=<YOUR_CLIENT_SECRET>
-    BASE_URL=<YOUR_BASE_URI>
-    REDIRECT_URI=<YOUR_REDIRECT_URI>
-    PEM_CERTIFICATE_PATH=<PEM_CERTIFICATE_PATH> # Note: Use forward slashes (/) for paths
-    SCOPE=<ENTER_SCOPE_HERE> # Supported scopes => openid, email, profile
-    GRANT_TYPE=<YOUR_GRANT_TYPE> # Default is authorization_code, supported grant types =>   implicit, authorization_code_pkce, authorization_code
-In this step, you need to ensure that the credentials and configuration details in the .env file are accurate, especially the PEM certificate path and other key parameters.
+**📦 3. Composer (Dependency Manager for PHP):** 
+The application uses Composer to manage dependencies. Ensure Composer is installed on your system.
+Installation Guide: [Install Composer](https://www.javatpoint.com/how-to-install-composer-on-windows)
 
-# Install Dependencies:
-navigate to phpOauth Directory where the composer.json file is located and run the following command to install all required dependencies:
 
-### `composer install`
+---
 
-Make sure you have Composer installed to execute this command. If not , refer to the [installation guide](https://www.javatpoint.com/how-to-install-composer-on-windows). Or download it from [here](https://getcomposer.org/Composer-Setup.exe)
+## 1. Configure PHP App in MiniOrange 🚀
+&nbsp;1. Follow the guide to configure your PHP application in MiniOrange: [MiniOrange Integration Guide](https://www.miniorange.in/iam/integrations/php-oauth-single-sign-on-sso#step1).
 
-# Start Your Server 
+---
 
-If using XAMPP or WAMP locally : Launch the server software (eg,XAMPP OR WAMP) and ensure Apache (or an equivalent web server) is running.
+## 2. Download the Starter Application 📥
+&nbsp;1. Download the **Demo Starter Application** from this [GitHub repository](https://github.com/dev-shubham-mali/miniOrange-PHP-oauth-authentication-example-app/archive/refs/heads/main.zip).  
+&nbsp;2. Extract the `phpStarterApplication` folder.  
+&nbsp;3. Save the folder to:
+   - **XAMPP**: Your `htdocs` folder.
+   - **WAMP or other servers**: The root web directory.
 
-# Open Starter App in Browser 
-Open a web browser and enter the URL to access your application: 
+---
 
-For your local environment go to http://localhost/{your-folder-name}/ to access the starter application
+## 3. Modify the `.env` File 🛠️
+&nbsp;1. Open the `.env` file in the extracted folder.  
+&nbsp;2. Replace placeholders like `<YOUR_CLIENT_ID>` with the actual credentials copied during Step 1 from MiniOrange.  
+&nbsp;3. Ensure you include the necessary configuration details for the OAuth process.  
 
-# Start and Test Authorization
+---
 
-initiate the authorization process by clicking the "Start Authorization" button in the starter app. This should redirect you to the authentication provider (MiniOrange) to complete the login.
-After a successful login, you should be redirected back to your application, where you can verify the OAuth flow and ensure your user is authenticated.
-Or You can Enter your username and password for password grant and test OAuth Flow.
+## 4. Install Dependencies 📦
+&nbsp;1. Navigate to the `phpOAuth` directory (where the `composer.json` file is located).  
+&nbsp;2. Run the following command to install required dependencies:  
+   ```bash
+   composer install
+   ```
+Make sure you have Composer installed to execute this command.
+If not, refer to the [installation guide](https://www.javatpoint.com/how-to-install-composer-on-windows). Or download it from [here](https://getcomposer.org/Composer-Setup.exe). 
 
+---
+
+## 5. Start Your Server 🌐
+&nbsp;1. Using XAMPP or WAMP Locally
+
+* Launch the server software (e.g., XAMPP or WAMP).
+* Ensure Apache or an equivalent web server is running.
+
+## 6.  Open the Starter App in the Browser** 🌟
+
+* Open a web browser and enter the URL to access your application:
+* For your  local environment go to http://localhost/your-folder-name/ to access the starter application.
+[Also make sure to update dashboard Url in your-folder-name/oauth.php at line 40 with your-folder-name/dashboard.php]
+
+
+## 7. Start and Test Authorization** ✅
+
+&nbsp;1. initiate the authorization process by clicking the "Start Authorization" button in the starter app. 
+
+&nbsp;2. This should redirect you to the authentication provider (MiniOrange) to complete the login.
+
+&nbsp;3. After a successful login, you should be redirected back to your application, where you can verify the OAuth flow and ensure your user is authenticated.
+
+---
+
+![](https://github.com/dev-shubham-mali/miniOrange-PHP-oauth-authentication-example-app/blob/main/phpConnectorDemo.gif)
 
 

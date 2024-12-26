@@ -13,86 +13,60 @@ if ($errorMessage) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PHP OAUTH</title>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-        crossorigin="anonymous"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="./styles/style.css">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <!-- Popup for error message -->
     <?php if ($errorMessage): ?>
         <div class="alert alert-danger alert-dismissible fade show position-fixed top-0 start-50 translate-middle-x w-100 z-index-5" role="alert">
             <strong>Error!</strong> <?= htmlspecialchars($errorMessage); ?>
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
     <?php endif; ?>
-    <section class="background-radial-gradient overflow-hidden">
-        <div class="container px-4 py-5 px-md-5 text-center text-lg-start my-5">
-            <div class="row gx-lg-5 align-items-center mb-5">
-                <div class="col-lg-6 mb-5 mb-lg-0" style="z-index: 10">
-                    <h1 class="my-5 display-5 fw-bold ls-tight" style="color: hsl(218, 81%, 95%)">
-                        Test Php OAuth Connector Here <br />
-                        <span style="color: hsl(218, 81%, 75%)">for your business</span>
-                    </h1>
-                    <p class="mb-4 opacity-70" style="color: hsl(218, 81%, 85%)">
-                        This testing interface allows you to experiment with various OAuth grant types and scopes.
-                        Configure settings in the .env file to test different authentication scenarios and see how the
-                        connector adapts to your requirements seamlessly.
-                    </p>
-                </div>
-
-                <div class="col-lg-6 mb-5 mb-lg-0 position-relative">
-                    <div id="radius-shape-1" class="position-absolute rounded-circle shadow-5-strong"></div>
-                    <div id="radius-shape-2" class="position-absolute shadow-5-strong"></div>
-
-                    <div class="card bg-glass">
-                        <div class="card-body px-4 py-5 px-md-5">
-                            <form action="index.php" method="post">
-                                <img src="./assets/miniorange-logo.png" alt="miniorange-logo" width="50%">
-
-                                <!-- Email input -->
-                                <div data-mdb-input-init class="form-outline mb-4">
-                                    <input type="email" id="form3Example3" class="form-control" name="email" />
-                                    <label class="form-label" for="form3Example3">Email address</label>
-                                </div>
-
-                                <!-- Password input -->
-                                <div data-mdb-input-init class="form-outline mb-4">
-                                    <input type="password" id="form3Example4" class="form-control" name="pass" />
-                                    <label class="form-label" for="form3Example4">Password</label>
-                                </div>
-
-                                <!-- Submit button -->
-                                <button type="submit" data-mdb-button-init data-mdb-ripple-init
-                                    class="btn btn-primary btn-block mb-4">
-                                    Sign In with Password Grant
-                                </button>
-                            </form>
-                            <!-- Checkbox -->
-                            <div class="form-check d-flex justify-content-center mb-4">
-                                <p name="signup">Not a user? <a href="https://www.miniorange.com/businessfreetrial">Signup Here!</a></p>
-                            </div>
-                            <p class="text-center">OR</p>
-                            <!-- Submit button -->
-                            <div class="text-center">
-                                <form method="post">
-                                    <input type="hidden" name="startAuth" value="1">
-                                    <button type="submit" data-mdb-button-init data-mdb-ripple-init
-                                        class="btn btn-primary btn-block">
-                                        Sign In with MiniOrange
-                                    </button>
-                                </form>
-
-                            </div>
-                        </div>
-                    </div>
+    <div class="app-container">
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <div class="app-icon">
+                    <img src="https://www.miniorange.com/atlassian/wp-content/uploads/sites/14/2022/11/miniorange-logo-transparent.webp" />
                 </div>
             </div>
-    </section>
+            <ul class="sidebar-list">
+                <li class="sidebar-list-item active">
+                    <a href="#">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home">
+                            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                            <polyline points="9 22 9 12 15 12 15 22" />
+                        </svg>
+                        <span>Login</span>
+                    </a>
+                </li>
+                <li class="sidebar-list-item ">
+                    <a href="#">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-shopping-bag">
+                            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
+                            <line x1="3" y1="6" x2="21" y2="6" />
+                            <path d="M16 10a4 4 0 0 1-8 0" />
+                        </svg>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="app-content">
+            <div class="app-content-header">
+                <h1 class="app-content-headerText">Sample Application</h1>
+                <form method="post" action="">
+                    <button type="submit" name="startAuth" class="app-content-headerButton">Sign In with MiniOrange</button>
+                </form>
+            </div>
+            <br>
+            <h1>Test OAuth Authentication in Sample Php Website</h1>
+            <p>This testing interface allows you to experiment with various OAuth grant types and scopes. Configure settings in the .env file to test different authentication scenarios and see how the miniOrange php connector adapts to your requirements seamlessly.</p>
+            <br>
+            <br>
+        </div>
+    </div>
 </body>
 
 </html>

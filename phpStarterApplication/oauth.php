@@ -13,8 +13,7 @@ use Miniorange\Phpoauth\{
     Config\OAuthConfig,
     Handlers\AuthorizationHandler,
     Listeners\LoginListener,
-    Handlers\CallbackHandler,
-    GrantsImplementation\PasswordGrant
+    Handlers\CallbackHandler
 };
 
 // Initialize OAuth configuration and authorization handler.
@@ -32,11 +31,9 @@ class MyLoginSuccessListener implements LoginListener
 {
     public function onLoginSuccess($user)
     {
-        $firstName = isset($user->firstname) ? htmlspecialchars($user->firstname) : '';
-        $lastName = isset($user->lastname) ? htmlspecialchars($user->lastname) : '';
-
         $_SESSION["firstname"] = $user->firstname;
         $_SESSION["lastname"] = $user->lastname;
+        $_SESSION["user"] = $user;
         header("Location: /phpStarterApplication/dashboard.php");
     }
     public function onError($errorMessage)
@@ -55,16 +52,10 @@ class MyLoginSuccessListener implements LoginListener
 $loginListener = new MyLoginSuccessListener();
 $fullUri = $_SERVER['REQUEST_URI'];
 $myCallbackHandler = new CallbackHandler($config, $loginListener);
+
 $myCallbackHandler->handleUri($fullUri);
 
 
-//password grant...
-if (isset($_POST['email']) && isset($_POST['pass'])) {
-    $passwordGrant = new PasswordGrant($config, $loginListener);
-    $passwordGrant->createAuthorizationRequest($_POST['email'], $_POST['pass']);
-    exit();
-}
-//other flows
 if (isset($_POST['startAuth'])) {
     // Call the startAuthorization method when button is clicked
     try {
@@ -73,5 +64,3 @@ if (isset($_POST['startAuth'])) {
         echo "Error: " . $e->getMessage();
     }
 }
-
-
