@@ -74,6 +74,6 @@ If not, refer to the [installation guide](https://www.javatpoint.com/how-to-inst
 
 ---
 
-![](https://github.com/dev-shubham-mali/miniOrange-PHP-oauth-authentication-example-app/blob/main/phpConnectorDemo.gif)
+![](https://github.com/miniOrangeDev/miniOrange-PHP-oauth-authentication-example-app/blob/main/phpConnectorDemo.gif)
 
 
